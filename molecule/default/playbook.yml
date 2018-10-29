@@ -7,7 +7,7 @@
       filebeat_output_elasticsearch_enabled: true
       filebeat_output_logstash_enabled: false
       filebeat_output_elasticsearch_hosts:
-        - "127.1.1.1:9200"
+        - "{{ es_host }}"
       filebeat_prospectors:
         - input_type: log
           paths:
