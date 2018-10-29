@@ -2,6 +2,8 @@
 
 - name: run the main role
   hosts: all
+  vars:
+    - es_host: "127.0.0.1:9200"
   roles:
     - role: geerlingguy.filebeat
       filebeat_output_elasticsearch_enabled: true
