@@ -1,2 +1,4 @@
 ---
 # defaults vars
+
+es_host: elasticsearch_host
