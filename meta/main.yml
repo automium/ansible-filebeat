@@ -1,6 +1,7 @@
 ---
 galaxy_info:
   author: Sami Yessou
+  role_name: filebeat
   description: Playbook for filebeat.
   company: Enter srl
   license: MIT
