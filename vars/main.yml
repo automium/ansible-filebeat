@@ -1,2 +1,3 @@
 ---
 # defaults vars
+es_host: "127.1.1.1:9200"
