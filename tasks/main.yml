@@ -48,7 +48,8 @@
     - restart filebeat
 
 - name: Enable filebeat on bootup and ensure it's started
-  command: filebeat modules enable system
+  command: filebeat modules enable  "{{ item }}"
+  with_items: "{{ filebeat_enable_modules }}"
   notify: restart filebeat
 
 - name: Enable filebeat on bootup and ensure it's started

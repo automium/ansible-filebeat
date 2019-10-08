@@ -10,3 +10,5 @@ filebeat_conf:
       hosts: ["https://localhost:9200"]
       username: "filebeat_internal"
       password: "YOUR_PASSWORD"
+filebeat_enable_modules:
+  - system
