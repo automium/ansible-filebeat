@@ -1,3 +1,9 @@
+Ansible Role: filebeat 
+======================================
+
+[![Build Status](https://travis-ci.org/entercloudsuite/ansible-filebeat.svg?branch=master)](https://travis-ci.org/entercloudsuite/ansible-filebeat)
+[![Galaxy](https://img.shields.io/badge/galaxy-entercloudsuite.filebeat-blue.svg?style=flat-square)](https://galaxy.ansible.com/entercloudsuite/filebeat)
+
 # Ansible role to install & configure filebeat
 Ansible role that installs filebeat on Linux using the apt package elastic provides.
 
