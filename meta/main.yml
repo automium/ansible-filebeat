@@ -1,7 +1,6 @@
 ---
 galaxy_info:
-  author: Sami Yessou
-  role_name: filebeat
+  author: Attilio Greco
   description: Playbook for filebeat.
   company: Enter srl
   license: MIT
@@ -13,6 +12,5 @@ galaxy_info:
   galaxy_tags:
     - molecule
 
-dependencies:
-  - {role: geerlingguy.filebeat, version: 1.3.0}
-  # List your role dependencies here, one per line.
+dependencies: []
+

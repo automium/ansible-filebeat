@@ -2,10 +2,23 @@
 package:
   filebeat:
     installed: true
+port:
+  tcp:80:
+    listening: true
+    ip:
+      - 0.0.0.0
 service:
   filebeat:
     enabled: true
     running: true
+user:
+  filebeat:
+    exists: true
+    groups:
+      - filebeat
+group:
+  filebeat:
+    exists: true
 process:
   filebeat:
     running: true

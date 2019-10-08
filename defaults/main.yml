@@ -1,4 +1,12 @@
 ---
-# defaults vars
+# defaults file for mediapeers.filebeat
+add_repo: "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
+# remove_repo:
+filebeat_pakage: filebeat=7.1.1
 
-es_host: elasticsearch_host
+
+filebeat_conf:
+  output.elasticsearch:
+      hosts: ["https://localhost:9200"]
+      username: "filebeat_internal"
+      password: "YOUR_PASSWORD"

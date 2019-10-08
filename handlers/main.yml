@@ -1,2 +1,10 @@
 ---
-# handlers file
+# handlers file for mediapeers.filebeat
+
+- name: reload filebeat systemd unit
+  systemd: state=started name=filebeat daemon_reload=yes
+
+- name: restart filebeat
+  service:
+    name: filebeat
+    state: restarted
