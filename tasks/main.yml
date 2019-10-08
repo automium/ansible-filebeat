@@ -14,7 +14,7 @@
 # Install filebeat as a logstash client (to deliver logs), just for demoing
 - name: Remove old repo "{{ remove_repo }}"
   apt_repository:
-    repo:  "{{ remove_repo }}"
+    repo: "{{ remove_repo }}"
     update_cache: yes
     state: absent
   when: remove_repo is defined
@@ -47,12 +47,17 @@
     - reload filebeat systemd unit
     - restart filebeat
 
+# noqa there is not a module
 - name: Enable filebeat on bootup and ensure it's started
   command: filebeat modules enable  "{{ item }}"
+  args:
+    creates: "/etc/filebeat/modules.d/{{ item }}.yml"
   with_items: "{{ filebeat_enable_modules }}"
   notify: restart filebeat
+  tags:
+    - skip_ansible_lint
 
-- name: Enable filebeat on bootup and ensure it's started
+- name: Start filebeat service
   service:
     name: filebeat
     enabled: yes

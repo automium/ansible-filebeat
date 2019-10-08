@@ -4,11 +4,10 @@ add_repo: "deb https://artifacts.elastic.co/packages/7.x/apt stable main"
 # remove_repo:
 filebeat_pakage: filebeat=7.1.1
 
-
 filebeat_conf:
   output.elasticsearch:
-      hosts: ["https://localhost:9200"]
-      username: "filebeat_internal"
-      password: "YOUR_PASSWORD"
+    hosts: ["https://localhost:9200"]
+    username: "filebeat_internal"
+    password: "YOUR_PASSWORD"
 filebeat_enable_modules:
   - system
