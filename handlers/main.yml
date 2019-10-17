@@ -1,8 +1,6 @@
 ---
-# handlers file for mediapeers.filebeat
-
 - name: reload filebeat
-  service: 
+  service:
     state: started
     name: filebeat
     daemon_reload: yes
