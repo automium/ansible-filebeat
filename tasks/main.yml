@@ -44,8 +44,7 @@
     option: LimitNOFILE
     value: 64000
   notify:
-    - reload filebeat systemd unit
-    - restart filebeat
+    - reload filebeat
 
 # noqa there is not a module
 - name: Enable filebeat on bootup and ensure it's started
@@ -57,7 +56,12 @@
   tags:
     - skip_ansible_lint
 
-- name: Start filebeat service
+- name: Enable filebeat service
   service:
     name: filebeat
     enabled: yes
+
+- name: Start filebeat searvice
+  service:
+    name: filebeat
+    state: started
