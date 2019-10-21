@@ -11,3 +11,11 @@ filebeat_conf:
     password: "YOUR_PASSWORD"
 filebeat_enable_modules:
   - system
+
+filebeat_enabled: false
+# possible choise:
+#   reloaded
+#   restarted
+#   started
+#   stopped
+filebeat_state: stopped

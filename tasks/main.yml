@@ -46,7 +46,6 @@
   notify:
     - reload filebeat
 
-# noqa there is not a module
 - name: Enable filebeat on bootup and ensure it's started
   command: filebeat modules enable  "{{ item }}"
   args:
@@ -59,9 +58,9 @@
 - name: Enable filebeat service
   service:
     name: filebeat
-    enabled: yes
+    enabled: "{{ filebeat_enabled }}"
 
 - name: Start filebeat searvice
   service:
     name: filebeat
-    state: started
+    state: "{{ filebeat_state }}"
