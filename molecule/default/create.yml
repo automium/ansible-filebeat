@@ -12,8 +12,7 @@
       docker_container:
         name: "{{ item.name }}"
         hostname: "{{ item.name }}"
-        image: solita/ubuntu-systemd:latest
-        command: /sbin/init
+        image: automium/testenv:bionic
         capabilities:
           - SYS_ADMIN
         volumes:
