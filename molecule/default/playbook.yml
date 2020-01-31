@@ -3,4 +3,8 @@
 - name: run the main role
   hosts: all
   roles:
-    - {role: ansible-filebeat}
+    - role: ansible-filebeat
+      filebeat_keystore_secrets:
+        - name: TEST_KEY
+          value: testvalue
+

@@ -30,6 +30,18 @@
     name: "{{ filebeat_pakage }}"
     update_cache: yes
 
+- name: Configure | add or replace secrets in Filebeat keyring
+  shell: |
+    set -o pipefail
+    echo '"{{ item.value }}"' | filebeat keystore add "{{ item.name }}" --stdin --force
+  register: filebeat_keyring_command
+  no_log: true
+  args:
+    executable: /bin/bash
+  with_items: "{{ filebeat_keystore_secrets }}"
+  when: filebeat_keystore_secrets | length > 0
+  changed_when: filebeat_keyring_command.stdout_lines[0] == "Created keystore"
+
 - name: Configure | filebeat to read from logfiles and deliver to logstash
   template:
     src: filebeat.yml.j2

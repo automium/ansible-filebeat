@@ -19,3 +19,4 @@ filebeat_enabled: false
 #   started
 #   stopped
 filebeat_state: stopped
+filebeat_keystore_secrets: []
